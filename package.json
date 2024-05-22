@@ -1,0 +1,40 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "main": "expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo-google-fonts/fredericka-the-great": "^0.2.3",
+    "@expo-google-fonts/nanum-brush-script": "^0.2.3",
+    "@expo-google-fonts/play": "^0.2.3",
+    "@expo-google-fonts/share-tech-mono": "^0.2.3",
+    "@expo-google-fonts/special-elite": "^0.2.3",
+    "@gchumillas/schema-fixer": "^2.0.5",
+    "dayjs": "^1.11.11",
+    "expo": "~51.0.8",
+    "expo-battery": "~8.0.1",
+    "expo-font": "~12.0.5",
+    "expo-keep-awake": "~13.0.2",
+    "expo-localization": "~15.0.3",
+    "expo-secure-store": "~13.0.1",
+    "expo-splash-screen": "~0.27.4",
+    "expo-status-bar": "~1.12.1",
+    "i18next": "^23.11.5",
+    "react": "18.2.0",
+    "react-i18next": "^14.1.1",
+    "react-native": "0.74.1",
+    "react-native-svg": "15.2.0",
+    "react-redux": "^9.1.2",
+    "react-router-native": "^6.23.1",
+    "redux": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}
