@@ -1,11 +1,12 @@
 import { Button, View } from "react-native";
+import { useFonts } from 'expo-font';
 
 
-const ProfileScreen({ navigation }) {
+const ProfileScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button
-        title="Go to Profile"
+        title="Go to Notifications"
         onPress={() => navigation.navigate('Notifications')}
       />
     </View>
