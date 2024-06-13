@@ -1,5 +1,4 @@
 import { Button, View } from "react-native";
-import { useFonts } from 'expo-font';
 
 
 const ProfileScreen = ({ navigation }) => {

@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import {
-  FrederickatheGreat_400Regular,
+  FrederickatheGreat_400Regular, 
   useFonts
 } from "@expo-google-fonts/fredericka-the-great";
 import { NanumBrushScript_400Regular } from "@expo-google-fonts/nanum-brush-script";
@@ -14,6 +14,8 @@ import SettingsScreen from "./src/screens/SettingsScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import NotificationsScreen from "./src/screens/NotificationsScreen";
+import { View } from "react-native";
+
 
 const Stack = createStackNavigator();
 
@@ -29,7 +31,8 @@ function MyStack() {
 }
 
 export default function App() {
-  let [fontsLoaded] = useFonts({
+  
+  let [fontsLoaded, fontError] = useFonts({
     FrederickatheGreat_400Regular,
     NanumBrushScript_400Regular,
     Play_400Regular,
@@ -37,7 +40,7 @@ export default function App() {
     SpecialElite_400Regular
   });
 
-  if (!fontsLoaded) {
+  if (!fontsLoaded && !fontError) {
     return null;
   }
 
