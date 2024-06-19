@@ -5,18 +5,18 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text
-        style={{ fontFamily: "FrederickatheGreat_400Regular", fontSize: 40 }}
+        style={{ fontFamily: "frederickatheGreat_400Regular", fontSize: 40 }}
       >
         FrederickatheGreat
       </Text>
-      <Text style={{ fontFamily: "NanumBrushScript_400Regular", fontSize: 40 }}>
+      <Text style={{ fontFamily: "nanumBrushScript_400Regular", fontSize: 40 }}>
         NanumBrushScript
       </Text>
-      <Text style={{ fontFamily: "Play", fontSize: 40 }}>play</Text>
-      <Text style={{ fontFamily: "ShareTechMono_400Regular", fontSize: 40 }}>
+      <Text style={{ fontFamily: "play", fontSize: 40 }}>play</Text>
+      <Text style={{ fontFamily: "shareTechMono_400Regular", fontSize: 40 }}>
         ShareTechMono
       </Text>
-      <Text style={{ fontFamily: "SpecialElite_400Regular", fontSize: 40 }}>
+      <Text style={{ fontFamily: "specialElite_400Regular", fontSize: 40 }}>
         SpecialElite
       </Text>
 
