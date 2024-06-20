@@ -22,14 +22,16 @@ import { View } from "react-native";
 
 const Stack = createStackNavigator();
 
-function MyStack() {
+function Main() {
   return (
+    <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
     </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
