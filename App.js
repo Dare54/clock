@@ -54,3 +54,11 @@ export default function App() {
     </Provider>
   );
 }
+
+export const Increase = () => ({
+  type: 'INCREASE'
+})
+
+export const Decrease = () => ({
+  type: 'DECREASE'
+})
