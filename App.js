@@ -19,10 +19,6 @@ import HomeScreen from "./src/screens/HomeScreen";
 import NotificationsScreen from "./src/screens/NotificationsScreen";
 import { View } from "react-native";
 
-export * from "./useBatteryLevel";
-export * from "./useOrientation";
-export * from "./store-hooks";
-
 
 const Stack = createStackNavigator();
 
@@ -38,6 +34,7 @@ function Main() {
     </NavigationContainer>
   );
 }
+
 
 export default function App() {
   
