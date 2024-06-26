@@ -5,19 +5,19 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import {
   useFonts,
-  frederickatheGreat_400Regular
+  FrederickatheGreat_400Regular,
 
 } from "@expo-google-fonts/fredericka-the-great";
-import { nanumBrushScript_400Regular } from "@expo-google-fonts/nanum-brush-script";
-import { play_400Regular } from "@expo-google-fonts/play";
-import { shareTechMono_400Regular } from "@expo-google-fonts/share-tech-mono";
-import { specialElite_400Regular } from "@expo-google-fonts/special-elite";
+import { NanumBrushScript_400Regular } from "@expo-google-fonts/nanum-brush-script";
+import { Play_400Regular } from "@expo-google-fonts/play";
+import { ShareTechMono_400Regular } from "@expo-google-fonts/share-tech-mono";
+import { SpecialElite_400Regular } from "@expo-google-fonts/special-elite";
 
 import SettingsScreen from "./src/screens/SettingsScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import NotificationsScreen from "./src/screens/NotificationsScreen";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
 
 const Stack = createStackNavigator();
@@ -38,15 +38,15 @@ function Main() {
 
 export default function App() {
   
-  let [fontsLoaded, fontError] = useFonts({
-    frederickatheGreat_400Regular,
-    nanumBrushScript_400Regular,
-    play_400Regular,
-    shareTechMono_400Regular,
-    specialElite_400Regular
+  const [fontsLoaded] = useFonts({
+    FrederickatheGreat_400Regular,
+    NanumBrushScript_400Regular,
+    Play_400Regular,
+    ShareTechMono_400Regular,
+    SpecialElite_400Regular
   });
 
-  if (!fontsLoaded && !fontError) {
+  if (!fontsLoaded) {
     return null;
   }
 
