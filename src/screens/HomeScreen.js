@@ -1,33 +1,99 @@
-import { Button, Text, View } from "react-native";
-
-
-const HomeScreen = ({ navigation }) => {
+// styles
+const styles = StyleSheet.create({
+  root: {
+    alignItems: "center",
+    backgroundColor: PALETTE.black,
+    flex: 1,
+    justifyContent: "space-evenly"
+  },
+  display: {
+    alignItems: "center",
+    paddingHorizontal: 4 * GAP
+  },
+  time: {
+    marginBottom: GAP
+  },
+  date: {
+    marginBottom: 2.5 * GAP
+  }
+});
+ 
+//main screen
+export const HomeScreen = ({ navigation }) => {
+  //hooks
+  useKeepAwake();
+  const { t, i18n } = useTranslation("home");
+  const orientation = useOrientation();
+  const level = useBatteryLevel();
+  const [showModalMenu, setShowModalMenu] = useState(false);
+  const [time, setTime] = useState(dayjs());
+  const { timeColor } = useTimeColor();
+  const { timeFont } = useTimeFont();
+  const { timeFormat } = useTimeFormat();
+  const { showSeconds } = useShowSeconds();
+  const { showDate } = useShowDate();
+  const { showBattery } = useShowBattery();
+ 
+ 
+  useEffect(() => {
+    const lang = i18n.resolvedLanguage;
+    if (SUPPORTED_LANGUAGES.includes(lang)) {
+      dayjs.locale(lang);
+    } else {
+      dayjs.locale(FALLBACK_LANGUAGE);
+    }
+  }, [i18n.resolvedLanguage]);
+ 
+ //effect that gets current local time before initial screen render
+  useEffect(() => {
+    const updateTime = () => setTime(dayjs());
+    // setInterval is not precise enough in some devices
+    // so I decided to use 1/3 seconds (approx. 333 milliseconds)
+    // to always show an accurate time
+    const i = setInterval(() => updateTime(), 333);
+    updateTime();
+    return () => clearInterval(i);
+  }, []);
+ 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text
-        style={{ fontFamily: "FrederickatheGreat_400Regular", fontSize: 40 }}
-      >
-        FrederickatheGreat
-      </Text>
-      <Text style={{ fontFamily: "NanumBrushScript_400Regular", fontSize: 40 }}>
-        NanumBrushScript
-      </Text>
-      <Text style={{ fontFamily: "Play", fontSize: 40 }}>play</Text>
-      <Text style={{ fontFamily: "ShareTechMono_400Regular", fontSize: 40 }}>
-        ShareTechMono
-      </Text>
-      <Text style={{ fontFamily: "SpecialElite_400Regular", fontSize: 40 }}>
-        SpecialElite
-      </Text>
-
-      <View style={{ margin: 16 }} />
-
-      <Button
-        title="Go to Profile"
-        onPress={() => navigation.navigate("Profile")}
-      />
-    </View>
+    <SafeAreaView style={styles.root}>
+      <View style={styles.display}>
+        <TimeDisplay
+          value={time}
+          color={timeColor}
+          format={timeFormat}
+          showSeconds={showSeconds}
+          font={timeFont}
+          style={styles.time}
+        />
+        {showDate && (
+          <DateDisplay value={time} color={timeColor} style={styles.date} />
+        )}
+        {showBattery && <BatteryIcon value={100 * level} color={timeColor} />}
+      </View>
+ 
+      {orientation === "portrait" && (
+        <IconButton
+          icon={<SettingsIcon width={36} height={32} fill={timeColor} />}
+          onPress={() => setShowModalMenu(true)}
+        />
+      )}
+ 
+      <ModalMenu open={showModalMenu} onClose={() => setShowModalMenu(false)}>
+        <MenuItem
+          label={t`preferences`}
+          onPress={() => navigation.navigate("SettingsScreen")}
+        />
+        <MenuItem
+          label={t`fonts`}
+          onPress={() => navigation.navigate("FontsScreen")}
+        />
+        <MenuItem
+          label={t`colors`}
+          onPress={() => navigation.navigate("ColorsScreen")}
+        />
+      </ModalMenu>
+      <StatusBar hidden />
+    </SafeAreaView>
   );
 };
-
-export default HomeScreen;
