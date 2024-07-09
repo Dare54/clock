@@ -1,5 +1,6 @@
-import { Button, Text, View } from "react-native";
+import { Button, Text, View, StyleSheet } from "react-native";
 import {DateDisplay, TimeDisplay, BatteryIcon, IconButton, MenuItem, ModalMenu} from "../components";
+import { PALETTE, GAP } from "../constants";
 
 
 
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
 });
  
 //main screen
-export const HomeScreen = ({ navigation }) => {
+export default HomeScreen = ({ navigation }) => {
   //hooks
   useKeepAwake();
   const { t, i18n } = useTranslation("home");
