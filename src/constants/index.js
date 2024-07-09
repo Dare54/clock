@@ -1,3 +1,3 @@
-export * from "./useBatteryLevel";
-export * from "./useOrientation";
-export * from "./store-hooks";
+export * from "../Hooks/useBatteryLevel";
+export * from "../Hooks/useOrientation";
+export * from "../Hooks/store-hooks";

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { AM_PM } from "../constants";
-import { useOrientation } from "../hooks/use-orientation";
+import { useOrientation } from "../Hooks/useOrientation";
 import Text from "./text";
 
 /**
