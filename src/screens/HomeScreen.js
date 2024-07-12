@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, Text, View, StyleSheet } from "react-native";
 import {DateDisplay, TimeDisplay, BatteryIcon, IconButton, MenuItem, ModalMenu} from "../components";
 import { PALETTE, GAP } from "../constants";
