@@ -1,10 +1,15 @@
-import React from "react";
-import { Button, Text, View, StyleSheet } from "react-native";
-import {DateDisplay, TimeDisplay, BatteryIcon, IconButton, MenuItem, ModalMenu} from "../components";
-import { PALETTE, GAP } from "../constants";
+import { SafeAreaView, StyleSheet, View } from "react-native";
+import { useKeepAwake } from "expo-keep-awake";
 
-
-
+import {
+  BatteryIcon,
+  DateDisplay,
+  IconButton,
+  MenuItem,
+  ModalMenu,
+  TimeDisplay
+} from "../components";
+import { GAP, PALETTE } from "../constants";
 
 // styles
 const styles = StyleSheet.create({
@@ -25,7 +30,7 @@ const styles = StyleSheet.create({
     marginBottom: 2.5 * GAP
   }
 });
- 
+
 //main screen
 export default HomeScreen = ({ navigation }) => {
   //hooks
@@ -41,8 +46,7 @@ export default HomeScreen = ({ navigation }) => {
   const { showSeconds } = useShowSeconds();
   const { showDate } = useShowDate();
   const { showBattery } = useShowBattery();
- 
- 
+
   useEffect(() => {
     const lang = i18n.resolvedLanguage;
     if (SUPPORTED_LANGUAGES.includes(lang)) {
@@ -51,8 +55,8 @@ export default HomeScreen = ({ navigation }) => {
       dayjs.locale(FALLBACK_LANGUAGE);
     }
   }, [i18n.resolvedLanguage]);
- 
- //effect that gets current local time before initial screen render
+
+  //effect that gets current local time before initial screen render
   useEffect(() => {
     const updateTime = () => setTime(dayjs());
     // setInterval is not precise enough in some devices
@@ -62,7 +66,7 @@ export default HomeScreen = ({ navigation }) => {
     updateTime();
     return () => clearInterval(i);
   }, []);
- 
+
   return (
     <SafeAreaView style={styles.root}>
       <View style={styles.display}>
@@ -79,14 +83,14 @@ export default HomeScreen = ({ navigation }) => {
         )}
         {showBattery && <BatteryIcon value={100 * level} color={timeColor} />}
       </View>
- 
+
       {orientation === "portrait" && (
         <IconButton
           icon={<SettingsIcon width={36} height={32} fill={timeColor} />}
           onPress={() => setShowModalMenu(true)}
         />
       )}
- 
+
       <ModalMenu open={showModalMenu} onClose={() => setShowModalMenu(false)}>
         <MenuItem
           label={t`preferences`}
