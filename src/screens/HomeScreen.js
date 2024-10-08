@@ -24,6 +24,7 @@ import {
 } from "../components";
 import { useBatteryLevel, useOrientation } from "../Hooks";
 import { GAP, PALETTE } from "../constants";
+import { HomeScreen } from "../screens";
 
 // styles
 const styles = StyleSheet.create({
