@@ -8,6 +8,7 @@ import {
   MenuItem,
   ModalMenu,
   SettingsIcon,
+  StatusBar,
   TimeDisplay
 } from "../components";
 import { GAP, PALETTE } from "../constants";
