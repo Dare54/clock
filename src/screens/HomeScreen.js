@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useShowSeconds,
   useState,
   useTimeColor,
   useTimeFont,
