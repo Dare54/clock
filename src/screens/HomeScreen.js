@@ -3,6 +3,7 @@ import {
   useState,
   useTimeColor,
   useTimeFont,
+  useTimeFormat,
   useTranslation
 } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
