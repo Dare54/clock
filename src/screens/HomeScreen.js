@@ -11,6 +11,7 @@ import {
   StatusBar,
   TimeDisplay
 } from "../components";
+import { useBatteryLevel } from "../Hooks";
 import { GAP, PALETTE } from "../constants";
 
 // styles
