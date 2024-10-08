@@ -1,5 +1,7 @@
 import dayjs from "dayjs";
 import {
+  FALLBACK_LANGUAGE,
+  SUPPORTED_LANGUAGES,
   useEffect,
   useShowBattery,
   useShowDate,
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
 export default HomeScreen = ({ navigation }) => {
   //hooks
   useKeepAwake();
-  const { t, i18n } = useTranslation("home");
+  const { t, i18n } = useTranslation(HomeScreen);
   const orientation = useOrientation();
   const level = useBatteryLevel();
   const [showModalMenu, setShowModalMenu] = useState(false);
