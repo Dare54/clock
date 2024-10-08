@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { useKeepAwake } from "expo-keep-awake";
 
