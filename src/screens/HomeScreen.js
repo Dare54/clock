@@ -1,4 +1,10 @@
-import { useEffect, useState, useTimeColor, useTranslation } from "react";
+import {
+  useEffect,
+  useState,
+  useTimeColor,
+  useTimeFont,
+  useTranslation
+} from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { useKeepAwake } from "expo-keep-awake";
 
