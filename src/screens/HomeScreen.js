@@ -27,7 +27,6 @@ import {
 } from "../components";
 import { useBatteryLevel, useOrientation } from "../Hooks";
 import { GAP, PALETTE } from "../constants";
-import { HomeScreen } from "../screens";
 
 // styles
 const styles = StyleSheet.create({
@@ -50,10 +49,11 @@ const styles = StyleSheet.create({
 });
 
 //main screen
-export default HomeScreen = ({ navigation }) => {
+
+export const HomeScreen = ({ navigation }) => {
   //hooks
   useKeepAwake();
-  const { t, i18n } = useTranslation(HomeScreen);
+  const { t, i18n } = useTranslation("Home");
   const orientation = useOrientation();
   const level = useBatteryLevel();
   const [showModalMenu, setShowModalMenu] = useState(false);
