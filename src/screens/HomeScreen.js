@@ -7,6 +7,7 @@ import {
   IconButton,
   MenuItem,
   ModalMenu,
+  SettingsIcon,
   TimeDisplay
 } from "../components";
 import { GAP, PALETTE } from "../constants";
