@@ -1,13 +1,12 @@
 import { Text as RNText, StyleSheet } from "react-native";
+
 import { FONT_COLOR, FONT_SIZE } from "../constants";
 import { normalize } from "../utils/normalize";
-import { Children } from "react";
-import { number } from "@gchumillas/schema-fixer";
 
 const styles = StyleSheet.create({
-    root: {
-        color: FONT_COLOR
-    }
+  root: {
+    color: FONT_COLOR
+  }
 });
 
 /**
@@ -16,18 +15,18 @@ const styles = StyleSheet.create({
  * @param {number} [params.fontSize]
  * @param {object} [params.style]
  * @returns
-*/
+ */
 
 const Text = ({ fontSize = FONT_SIZE, style = {}, Children }) => {
-    return (
-        <RNText
-        numberOfLines={1}
-        adjustsFontSizeToFit
-        style={{ ...styles.root, ...style, fontSize: normalize(fontSize) }}
-        >
-        {Children}
-        </RNText>
-    );
+  return (
+    <RNText
+      numberOfLines={1}
+      adjustsFontSizeToFit
+      style={{ ...styles.root, ...style, fontSize: normalize(fontSize) }}
+    >
+      {Children}
+    </RNText>
+  );
 };
 
 export default Text;
