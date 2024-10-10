@@ -1,19 +1,4 @@
-import dayjs from "dayjs";
-import {
-  FALLBACK_LANGUAGE,
-  SUPPORTED_LANGUAGES,
-  useEffect,
-  useShowBattery,
-  useShowDate,
-  useShowSeconds,
-  useState,
-  useTimeColor,
-  useTimeFont,
-  useTimeFormat,
-  useTranslation
-} from "react";
-import { SafeAreaView, StyleSheet, View } from "react-native";
-import { useKeepAwake } from "expo-keep-awake";
+import { View } from "react-native";
 
 import {
   BatteryIcon,
@@ -21,12 +6,8 @@ import {
   IconButton,
   MenuItem,
   ModalMenu,
-  SettingsIcon,
-  StatusBar,
   TimeDisplay
 } from "../components";
-import { useBatteryLevel, useOrientation } from "../Hooks";
-import { GAP, PALETTE } from "../constants";
 
 // styles
 const styles = StyleSheet.create({
