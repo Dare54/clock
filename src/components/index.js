@@ -4,3 +4,4 @@ export { default as BatteryIcon } from "./battery-icon";
 export { default as IconButton } from "./icon-button";
 export { default as MenuItem } from "./menu-item";
 export { default as ModalMenu } from "./modal-menu";
+export { default as Loading } from "./loading";
