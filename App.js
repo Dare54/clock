@@ -100,7 +100,7 @@ const Main = () => {
       {/* Stack Navigator for screen transitions */}
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {/* Define the screens in the stack */}
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />{" "}
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
         {/* Main home screen */}
       </Stack.Navigator>
     </NavigationContainer>
