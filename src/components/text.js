@@ -19,18 +19,18 @@ const styles = StyleSheet.create({
  * @param {object} [params.style] - Optional custom styles to be applied to the Text component
  * @returns React Native Text component with custom styling
  */
-const Text = ({ fontSize = FONT_SIZE, style = {}, children }) => {
+const RNText = ({ fontSize = FONT_SIZE, style = {}, children }) => {
   return (
     // Render the React Native Text component with custom styles
-    <Text
+    <RNText
       numberOfLines={1} // Limits the text to a single line
       adjustsFontSizeToFit // Allows the text to scale its font size to fit within its container
       style={{ ...styles.root, ...style, fontSize: normalize(fontSize) }} // Merges default styles with custom styles, and applies normalized font size
     >
       {children}{" "}
       {/* Renders the children (content inside the Text component) */}
-    </Text>
+    </RNText>
   );
 };
 
-export default Text; // Exporting the Text component to be used in other parts of the app
+export default RNText; // Exporting the Text component to be used in other parts of the app
