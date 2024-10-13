@@ -130,7 +130,7 @@ export const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("ColorsScreen")} // Navigate to the colors screen.
         />
       </ModalMenu>
-      <StatusBar hidden /> {/* Hide the status bar. */}
+      <StatusBar hidden />
     </SafeAreaView>
   );
 };
