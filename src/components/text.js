@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native"; // Importing the base Text component from React Native
+// Importing necessary components from React Native
+import { Text as RNText, StyleSheet } from "react-native"; // Importing the base Text component from React Native
 
 // Importing constants and utility functions
 import { FONT_COLOR, FONT_SIZE } from "../constants"; // Constants for default font color and size
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
  * @param {object} [params.style] - Optional custom styles to be applied to the Text component
  * @returns React Native Text component with custom styling
  */
-const RNText = ({ fontSize = FONT_SIZE, style = {}, children }) => {
+const Text = ({ fontSize = FONT_SIZE, style = {}, children }) => {
   return (
     // Render the React Native Text component with custom styles
     <RNText
@@ -33,4 +34,4 @@ const RNText = ({ fontSize = FONT_SIZE, style = {}, children }) => {
   );
 };
 
-export default RNText; // Exporting the Text component to be used in other parts of the app
+export default Text; // Exporting the Text component to be used in other parts of the app
