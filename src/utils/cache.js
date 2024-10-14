@@ -1,28 +1,21 @@
-// Importing necessary functions from the "@gchumillas/schema-fixer" package.
-// These functions are used for schema validation and fixing data to conform to a schema.
 import { boolean, fix, parse, string } from "@gchumillas/schema-fixer";
-
-// Importing SecureStore from Expo, used for securely storing sensitive key-value pairs.
 import * as SecureStore from "expo-secure-store";
 
-// Importing constants used in the app, like time format options, available colors and fonts, and default configuration values.
 import {
-  AM_PM, // 12-hour time format option
-  APP_COLORS, // Available app colors for time display
-  APP_FONTS, // Available app fonts for time display
-  DEFAULT_CONFIG, // The default configuration to fall back on
-  H24 // 24-hour time format option
+  AM_PM,
+  APP_COLORS,
+  APP_FONTS,
+  DEFAULT_CONFIG,
+  H24
 } from "../constants";
 
-// Schema definition for the app's configuration object.
-// This schema is used to validate and sanitize config values from storage.
 const configSchema = {
-  timeFormat: string({ options: [H24, AM_PM] }), // Ensures timeFormat is either '24-hour' or 'AM/PM'
-  timeFont: string({ options: APP_FONTS }), // Ensures timeFont is one of the predefined fonts
-  timeColor: string({ options: APP_COLORS }), // Ensures timeColor is one of the predefined colors
-  showSeconds: boolean({ require: true }), // Requires showSeconds to be a boolean value
-  showDate: boolean({ require: true }), // Requires showDate to be a boolean value
-  showBattery: boolean({ require: true }) // Requires showBattery to be a boolean value
+  timeFormat: string({ options: [H24, AM_PM] }),
+  timeFont: string({ options: APP_FONTS }),
+  timeColor: string({ options: APP_COLORS }),
+  showSeconds: boolean({ require: true }),
+  showDate: boolean({ require: true }),
+  showBattery: boolean({ require: true })
 };
 
 /**
@@ -37,19 +30,14 @@ const configSchema = {
  * }>}
  */
 export const getConfig = async () => {
-  // Retrieve the stored configuration string from SecureStore
   const value = await SecureStore.getItemAsync("config");
 
-  // Parse the stored config using the defined schema.
-  // `parse` returns the validated config and any errors found during validation.
   const [config, errors] = parse(JSON.parse(value), configSchema);
 
-  // If there are any validation errors, return the default configuration.
   if (errors.length) {
     return DEFAULT_CONFIG;
   }
 
-  // Return the validated config.
   return config;
 };
 
@@ -66,13 +54,9 @@ export const getConfig = async () => {
  * @param {boolean} [config.showBattery] - Whether to display the battery level.
  */
 export const saveConfig = async (config) => {
-  // Get the existing configuration from SecureStore.
   const cfg = await getConfig();
 
-  // Merge the new config values with the existing ones.
-  // Then use `fix` to ensure the merged config adheres to the schema.
   const fixedConfig = fix({ ...cfg, ...config }, configSchema);
 
-  // Save the validated and fixed config back to SecureStore.
   return SecureStore.setItemAsync("config", JSON.stringify(fixedConfig));
 };

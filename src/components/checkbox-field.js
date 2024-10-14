@@ -25,23 +25,14 @@ const styles = StyleSheet.create({
   }
 });
 
-// CheckboxField component: This renders a checkbox with a label.
-// It takes 'label', 'value', and 'onChange' as props.
 const CheckboxField = ({ label, value, onChange }) => {
   return (
-    // Pressable component is a touchable area that listens for press events.
-    // When pressed, it toggles the checkbox state by inverting the current 'value'.
-    <Pressable
-      onPress={() => onChange((value = !value))} // Inverts the 'value' when pressed and calls 'onChange'.
-      style={styles.root} // Applies base styles to the Pressable area.
-    >
+    <Pressable onPress={() => onChange((value = !value))} style={styles.root}>
       {/* Check if the 'value' is true (checked state).
       If true, render the CheckOnIcon; otherwise, render the CheckOffIcon. */}
       {value ? (
-        // Render the CheckOnIcon when the checkbox is checked.
         <CheckOnIcon width={28} height={32} fill={COLORS.base} />
       ) : (
-        // Render the CheckOffIcon when the checkbox is unchecked.
         <CheckOffIcon width={28} height={32} fill={COLORS.base} />
       )}
 

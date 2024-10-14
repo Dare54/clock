@@ -15,29 +15,17 @@ import {
 } from "../components";
 import { saveConfig } from "../utils/cache";
 
-// SettingsScreen component: This screen allows users to configure time format,
-// and options like showing seconds, date, and battery.
-// It takes 'navigation' as a prop to navigate between screens.
 export const SettingsScreen = ({ navigation }) => {
-  // Extract the translation function 't' using the useTranslation hook,
-  // which is configured to use the 'settings' translation namespace.
   const { t } = useTranslation("settings");
 
-  // Extract the current time format and its setter function from useTimeFormat hook.
   const { timeFormat, setTimeFormat } = useTimeFormat();
 
-  // Extract the current state of 'showSeconds' and its setter function from useShowSeconds hook.
   const { showSeconds, setShowSeconds } = useShowSeconds();
 
-  // Extract the current state of 'showDate' and its setter function from useShowDate hook.
   const { showDate, setShowDate } = useShowDate();
 
-  // Extract the current state of 'showBattery' and its setter function from useShowBattery hook.
   const { showBattery, setShowBattery } = useShowBattery();
 
-  // doSave function: This function is called when the user presses the save button.
-  // It saves the current settings (time format, showSeconds, showDate, showBattery)
-  // by calling saveConfig and navigates back to the 'HomeScreen' afterward.
   const doSave = () => {
     saveConfig({
       timeFormat,
@@ -45,12 +33,10 @@ export const SettingsScreen = ({ navigation }) => {
       showDate,
       showBattery
     });
-    navigation.navigate("HomeScreen"); // Navigates to the HomeScreen after saving.
+    navigation.navigate("HomeScreen");
   };
 
   return (
-    // FormLayout component provides a layout for the settings form.
-    // It passes the doSave function to handle the save button press.
     <FormLayout onSave={doSave}>
       {/* RadioField component to toggle between time formats (24h or AM/PM).
       The selected value is 'timeFormat', and 'setTimeFormat' is used to update it. */}

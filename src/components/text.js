@@ -1,14 +1,11 @@
-// Importing necessary components from React Native
-import { Text as RNText, StyleSheet } from "react-native"; // Importing the base Text component from React Native
+import { Text as RNText, StyleSheet } from "react-native";
 
-// Importing constants and utility functions
-import { FONT_COLOR, FONT_SIZE } from "../constants"; // Constants for default font color and size
-import { normalize } from "../utils/normalize"; // A utility function to normalize font size across different screen sizes
+import { FONT_COLOR, FONT_SIZE } from "../constants";
+import { normalize } from "../utils/normalize";
 
-// Defining styles for the Text component
 const styles = StyleSheet.create({
   root: {
-    color: FONT_COLOR // Sets the default text color from the constants
+    color: FONT_COLOR
   }
 });
 
@@ -22,11 +19,10 @@ const styles = StyleSheet.create({
  */
 const Text = ({ fontSize = FONT_SIZE, style = {}, children }) => {
   return (
-    // Render the React Native Text component with custom styles
     <RNText
-      numberOfLines={1} // Limits the text to a single line
-      adjustsFontSizeToFit // Allows the text to scale its font size to fit within its container
-      style={{ ...styles.root, ...style, fontSize: normalize(fontSize) }} // Merges default styles with custom styles, and applies normalized font size
+      numberOfLines={1}
+      adjustsFontSizeToFit
+      style={{ ...styles.root, ...style, fontSize: normalize(fontSize) }}
     >
       {children}{" "}
       {/* Renders the children (content inside the Text component) */}
@@ -34,4 +30,4 @@ const Text = ({ fontSize = FONT_SIZE, style = {}, children }) => {
   );
 };
 
-export default Text; // Exporting the Text component to be used in other parts of the app
+export default Text;

@@ -3,11 +3,9 @@ import { initReactI18next } from "react-i18next";
 
 import resources from "./resources";
 
-// creating a language detection plugin using expo
-// http://i18next.com/docs/ownplugin/#languagedetector
 const languageDetector = {
   type: "languageDetector",
-  async: true, // flags below detection to be async
+  async: true,
   detect: (callback) => {
     //using deprecated method due to ongoing issue in iOS
     // https://github.com/expo/expo/issues/24350
