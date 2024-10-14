@@ -7,7 +7,12 @@ import {
   useTimeFormat
 } from "../Hooks";
 import { AM_PM, H24 } from "../constants";
-import { CheckboxField, FormLayout, RadioButton, RadioField } from ".";
+import {
+  CheckboxField,
+  FormLayout,
+  RadioButton,
+  RadioField
+} from "../components";
 import { saveConfig } from "../utils/cache";
 
 // SettingsScreen component: This screen allows users to configure time format,
