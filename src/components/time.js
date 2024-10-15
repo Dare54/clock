@@ -44,34 +44,26 @@ export const TimeSelector = ({ value, onChange, children }) => {
  * @param {number} params.showSeconds - Whether to show seconds in the time display (1 = true, 0 = false)
  */
 export const TimeButton = ({ value, color, font, format, showSeconds }) => {
-  // Use the TimeContext to get the current selected time and the change handler
   const { value: contextValue, onChange } = useContext(TimeContext);
 
-  // Memoize the current date and time using dayjs utility. This prevents unnecessary re-rendering
   const now = useMemo(() => dayjs(), []);
 
-  // Return a Pressable component (touchable button) that allows interaction
   return (
     <Pressable
-      // onPress event calls the onChange handler with the current button's time value
       onPress={() => onChange(value)}
       style={({ pressed }) => ({
-        ...styles.root, // Apply the base styles from the StyleSheet
-        borderColor: color, // Set the border color dynamically based on the passed color prop
+        ...styles.root,
+        borderColor: color,
         opacity:
-          // Determine the opacity based on whether the button's value is selected or pressed
-          // If the value matches the selected time, opacity is higher (indicating selection)
-          // If pressed, the opacity is slightly reduced for visual feedback
           value === contextValue ? (pressed ? 0.9 : 1) : pressed ? 0.4 : 0.3
       })}
     >
-      {/* Render the TimeDisplay component to show the current time with formatting options */}
       <TimeDisplay
-        value={now} // Pass the memoized current time to the display
-        color={color} // Pass the color prop for styling the display
-        font={font} // Pass the font prop for the display text
-        format={format} // Pass the format prop to determine whether to show 'am_pm' or '24h'
-        showSeconds={showSeconds} // Pass whether to show seconds in the time display
+        value={now}
+        color={color}
+        font={font}
+        format={format}
+        showSeconds={showSeconds}
       />
     </Pressable>
   );
