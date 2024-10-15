@@ -21,6 +21,7 @@ import {
 } from "./src/Hooks";
 import { HomeScreen } from "./src/screens/HomeScreen";
 import { SettingsScreen } from "./src/screens/SettingsScreen";
+import { FontsScreen } from "./src/screens/FontsScreen";
 import { getConfig } from "./src/utils/cache";
 import store from "./src/store";
 
@@ -84,6 +85,7 @@ const Main = () => {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+        <Stack.Screen name="FontsScreen" component={FontsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
