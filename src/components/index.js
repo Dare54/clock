@@ -8,3 +8,4 @@ export { default as Loading } from "./loading";
 export { default as CheckboxField } from "./checkbox-field";
 export { default as FormLayout } from "./form-layout";
 export * from "./radio";
+export * from "./time";
