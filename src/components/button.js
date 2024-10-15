@@ -14,20 +14,13 @@ const styles = StyleSheet.create({
   }
 });
 
-// Button component: This renders a button with a label.
-// It takes 'label' and 'onPress' as props.
 const Button = ({ label, onPress }) => {
   return (
-    // Pressable component is a touchable area that listens for press events.
-    // 'onPress' is triggered when the button is pressed.
     <Pressable
       onPress={onPress}
-      // The 'style' prop is used to dynamically change the button's style.
-      // The 'pressed' parameter from Pressable indicates if the button is being pressed.
-      // If pressed, the button's opacity is set to 0.7, otherwise it's 1 (fully opaque).
       style={({ pressed }) => ({
-        ...styles.root, // Merges base styles from 'styles.root'.
-        opacity: pressed ? 0.7 : 1 // Adjusts opacity based on pressed state.
+        ...styles.root,
+        opacity: pressed ? 0.7 : 1
       })}
     >
       {/* Displays the label text inside the button. */}
