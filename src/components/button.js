@@ -28,3 +28,5 @@ const Button = ({ label, onPress }) => {
     </Pressable>
   );
 };
+
+export default Button;
