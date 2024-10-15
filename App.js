@@ -20,6 +20,7 @@ import {
   useTimeFormat
 } from "./src/Hooks";
 import { HomeScreen } from "./src/screens/HomeScreen";
+import { SettingsScreen } from "./src/screens/SettingsScreen";
 import { getConfig } from "./src/utils/cache";
 import store from "./src/store";
 
@@ -80,11 +81,9 @@ const Main = () => {
 
   return (
     <NavigationContainer>
-      {/* Stack Navigator for screen transitions */}
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {/* Define the screens in the stack */}
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        {/* Main home screen */}
+        <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
