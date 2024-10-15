@@ -24,8 +24,8 @@ import { SettingsScreen } from "./src/screens/SettingsScreen";
 import { FontsScreen } from "./src/screens/FontsScreen";
 import { getConfig } from "./src/utils/cache";
 import store from "./src/store";
-
 import "./src/i18n";
+import { ColorsScreen } from "./src/screens/ColorsScreen";
 
 export default function App() {
   return (
@@ -86,6 +86,7 @@ const Main = () => {
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
         <Stack.Screen name="FontsScreen" component={FontsScreen} />
+        <Stack.Screen name="ColorsScreen" component={ColorsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
