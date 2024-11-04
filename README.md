@@ -24,10 +24,14 @@ Tech Stack
 •	*router-native*: contains bindings for using React Router in React Native applications.
 •	*dayjs*: parses, validates, manipulates, and displays dates and times.
 
-                                 
-                                 
-                                                      
 
+![Screenshot1](https://github.com/user-attachments/assets/0dbff699-5142-4c23-86b0-5cc2143bb2d4)
+![Screenshot2](https://github.com/user-attachments/assets/1252259c-9b17-4c46-9779-953b47ea7e03)
+![Screenshot3](https://github.com/user-attachments/assets/1be7f28c-d691-4ba6-8188-2efa54537880)
+![Screenshot4](https://github.com/user-attachments/assets/a0647fa5-6174-4582-8ce2-a26c636478df)
+![Screenshot5](https://github.com/user-attachments/assets/0a7d0599-ddb0-46b4-8c5b-8930be2d57c5)
+                          
+                                 
 
 Installation & Setup
 
